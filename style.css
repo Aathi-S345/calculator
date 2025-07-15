@@ -1,0 +1,195 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* avoid scroll */
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  background-image: url('background.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Centering Wrapper */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+}
+
+/* Calculator Card */
+.calc-card {
+  background: #f8f6f6;
+  padding: 32px 24px 24px 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  min-width: 320px;
+  max-width: 420px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Title */
+.app-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1.3px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Display Box */
+#display {
+  width: 100%;
+  padding: 15px 12px;
+  font-size: 1.3rem;
+  background: #18191e;
+  color: #f3f3f3;
+  border: none;
+  border-radius: 10px;
+  text-align: right;
+  box-shadow: inset 0 0 10px #000a;
+  letter-spacing: 1.1px;
+  margin-bottom: 25px;
+  user-select: none;
+  font-weight: 500;
+}
+
+/* Grid for buttons */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 65px;
+  gap: 16px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Buttons base style */
+.btn {
+  width: 100%;
+  max-width: 80px;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.22s ease, box-shadow 0.2s ease;
+  user-select: none;
+  font-weight: 600;
+  background: #232527;
+}
+
+/* Button Press effect */
+.btn:active {
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.7);
+  background-color: #111214;
+}
+
+/* Number Buttons */
+.btn.number {
+  background-color: #1a1d1f;
+}
+
+.btn.number:hover {
+  background-color: #464647;
+}
+
+/* Dot button special style */
+.btn[data-value="."] {
+  background-color: #4358e0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn[data-value="."]:hover {
+  background-color: #253181;
+}
+
+/* Operator Buttons */
+.operator {
+  background-color: #4358e0;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.operator:hover {
+  background-color: #253181;
+}
+
+/* Equal Button */
+.equal {
+  background-color: #19b86b;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.equal:hover {
+  background-color: #22894e;
+}
+
+/* Special Buttons (Clear, etc.) */
+.special {
+  background-color: #d14c52;
+  font-weight: 700;
+}
+
+.special:hover {
+  background-color: #911c1c;
+}
+
+/* Responsive for small devices */
+@media (max-width: 480px) {
+  .calc-card {
+    padding: 20px 16px 16px 16px;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .app-title {
+    font-size: 1.4rem;
+  }
+
+  #display {
+    font-size: 1.4rem;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+  }
+
+  .buttons-grid {
+    grid-auto-rows: 55px;
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
