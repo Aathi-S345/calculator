@@ -1,4 +1,4 @@
-/* Reset & base */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +9,16 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden; /* avoid scroll */
+  overflow: hidden; 
   font-family: Arial, sans-serif;
   background-color: #000000;
-  background-image: url('background.jpeg');
+  background-image: url('asset/background.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-/* Centering Wrapper */
 .main-wrapper {
   display: flex;
   justify-content: center;
@@ -29,7 +28,6 @@ body {
   padding: 10px;
 }
 
-/* Calculator Card */
 .calc-card {
   background: #f8f6f6;
   padding: 32px 24px 24px 24px;
@@ -45,7 +43,7 @@ body {
   z-index: 10;
 }
 
-/* Title */
+
 .app-title {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.8rem;
@@ -56,7 +54,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Display Box */
 #display {
   width: 100%;
   padding: 15px 12px;
@@ -73,7 +70,6 @@ body {
   font-weight: 500;
 }
 
-/* Grid for buttons */
 .buttons-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -83,7 +79,6 @@ body {
   justify-items: center;
 }
 
-/* Buttons base style */
 .btn {
   width: 100%;
   max-width: 80px;
@@ -102,13 +97,11 @@ body {
   background: #232527;
 }
 
-/* Button Press effect */
 .btn:active {
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.7);
   background-color: #111214;
 }
 
-/* Number Buttons */
 .btn.number {
   background-color: #1a1d1f;
 }
@@ -117,7 +110,6 @@ body {
   background-color: #464647;
 }
 
-/* Dot button special style */
 .btn[data-value="."] {
   background-color: #4358e0;
   color: #fff;
@@ -128,7 +120,7 @@ body {
   background-color: #253181;
 }
 
-/* Operator Buttons */
+
 .operator {
   background-color: #4358e0;
   font-weight: 700;
@@ -139,7 +131,6 @@ body {
   background-color: #253181;
 }
 
-/* Equal Button */
 .equal {
   background-color: #19b86b;
   font-weight: 700;
@@ -151,7 +142,6 @@ body {
   background-color: #22894e;
 }
 
-/* Special Buttons (Clear, etc.) */
 .special {
   background-color: #d14c52;
   font-weight: 700;
@@ -161,7 +151,7 @@ body {
   background-color: #911c1c;
 }
 
-/* Responsive for small devices */
+
 @media (max-width: 480px) {
   .calc-card {
     padding: 20px 16px 16px 16px;
