@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".btn");
   let currentInput = "";
 
-  // Allowed characters pattern for validation
+
   const validInputPattern = /^[0-9+\-*/.]*$/;
 
   buttons.forEach(button => {
@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const isBackspace = button.id === "backspace";
 
       if (isNumber || (value === ".")) {
-        if (value === "." && currentInput.slice(-1) === ".") return; // Prevent 2 dots consecutively
+        if (value === "." && currentInput.slice(-1) === ".") return;
         currentInput += value;
         updateDisplay();
       } 
       else if (isOperator) {
-        // Prevent multiple operators in a row
-        if (currentInput === "") return; // Can't start with operator
+        
+        if (currentInput === "") return;
         if (/[+\-*/.]$/.test(currentInput)) {
           currentInput = currentInput.slice(0, -1);
         }
@@ -54,20 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function calculateResult() {
-    // Sanitize input before eval using regex (allow only numbers and operators)
+
     if (!validInputPattern.test(currentInput)) {
       display.value = "Error";
       currentInput = "";
       return;
     }
     try {
-      // Evaluate expression
+ 
       let result = eval(currentInput);
       if (result === undefined) {
         display.value = "";
         currentInput = "";
       } else {
-        // Fix floating point to max 10 decimals
+      
         if (typeof result === "number") {
           result = +result.toFixed(10);
         }
